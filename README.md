@@ -4,11 +4,7 @@ Learn to use conditionals and loops in Python-programming.
 
 ### The assignment
 
-The tests are failing right now because the method isn't outputting the correct string. Fixing this up will make the tests green.
-
-### Setup command
-
-`sudo -H pip3 install pytest`
+Write a Python program to check whether a given input is even (or odd).
 
 ### Run command
 
