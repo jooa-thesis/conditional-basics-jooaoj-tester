@@ -11,11 +11,8 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
     - name: evenOrOdd test
       id: evenorodd-test
-      uses: education/autograding-command-grader@v1
       with:
         test-name: evenOrOdd test
         setup-command: sudo -H pip3 install pytest
