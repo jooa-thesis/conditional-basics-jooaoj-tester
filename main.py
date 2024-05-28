@@ -2,4 +2,4 @@
 
 def evenOrOdd(x):
     # TODO
-    return "even" if x % 2 == 0 else "odd"
+    return "odd" if x % 2 == 0 else "odd"
