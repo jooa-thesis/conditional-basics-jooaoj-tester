@@ -8,9 +8,25 @@ permissions:
   actions: read
   contents: read
 jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: evenOrOdd test
+      id: evenorodd-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: evenOrOdd test
+        setup-command: sudo -H pip3 install pytest
+        command: pytest main_test.py
+        timeout: 10
+        max-score: 1
   run-autograding-tests:
     runs-on: ubuntu-latest
-    if: github.actor != 'github-classroom[bot]'
+    needs: run-tests
+    #if: github.actor != 'github-classroom[bot]'
+    if: github.ref == 'refs/heads/main'
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
